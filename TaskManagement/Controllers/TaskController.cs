@@ -65,7 +65,7 @@ namespace TaskManagement.Controllers
         }
 
         [HttpPost]
-        [Route("AssignTask")]
+        [Route("assign")]
         public async Task<ApiResponse> AssignTask(AssignModel assignModel)
         {
             try

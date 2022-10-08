@@ -37,7 +37,7 @@ namespace TaskManagement.Controllers
         }
 
         [HttpPost]
-        [Route("makeComment")]
+        [Route("make")]
         public async Task<ApiResponse> MakeComment(CommentModel commentModel)
         {
             try
@@ -51,7 +51,7 @@ namespace TaskManagement.Controllers
         }
 
         [HttpPost]
-        [Route("editComment")]
+        [Route("edit")]
         public ApiResponse EditComment(CommentModel commentModel)
         {
             try
@@ -65,7 +65,7 @@ namespace TaskManagement.Controllers
         }
 
         [HttpGet]
-        [Route("searchComment/{prefix}")]
+        [Route("search/{prefix}")]
         public ApiResponse SearchComment(string prefix)
         {
             try
