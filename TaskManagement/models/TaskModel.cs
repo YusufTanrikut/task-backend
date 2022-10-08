@@ -11,5 +11,6 @@ namespace TaskManagement.models
         public string Title { get; set; }
         public string Description { get; set; }
         public List<CommentModel> Comments { get; set; }
-    } 
+        public UserModel User { get; set; }
+    }
 }

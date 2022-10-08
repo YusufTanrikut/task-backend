@@ -18,7 +18,7 @@ namespace CommentManagement.Dal
 
         public List<CommentEntity> GetComments(int taskId=0)
         {
-            return taskId == 0 ? _context.Comments.Where(x=>x.TaskId == taskId).ToList()
+            return taskId != 0 ? _context.Comments.Where(x=> x.TaskId == taskId).ToList()
                                : _context.Comments.ToList();
         }
 

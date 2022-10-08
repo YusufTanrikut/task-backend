@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TaskManagement.Entities
+namespace TaskManagement.models
 {
-    public class TaskEntity: BaseEntity
+    public class TaskRequestModel
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
     }

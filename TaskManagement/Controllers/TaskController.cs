@@ -52,7 +52,7 @@ namespace TaskManagement.Controllers
 
         [HttpPost]
         [Route("create")]
-        public async Task<ApiResponse> Create(TaskModel taskModel)
+        public async Task<ApiResponse> Create(TaskRequestModel taskModel)
         {
             try
             {
@@ -80,7 +80,7 @@ namespace TaskManagement.Controllers
 
         [HttpPost]
         [Route("edit")]
-        public ApiResponse Edit(TaskModel model)
+        public ApiResponse Edit(TaskRequestModel model)
         {
             try
             {

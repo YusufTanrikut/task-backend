@@ -39,6 +39,11 @@ namespace TaskManagement.Dal
             return res.Entity.Id > 0;
         }
 
+        public UserTaskEntity GetUserTask(int taskId)
+        {
+            return _context.UserTasks.FirstOrDefault(x=>x.TaskId == taskId && x.IsActive);
+        }
+
         public void Save()
         {
            _context.SaveChangesAsync();

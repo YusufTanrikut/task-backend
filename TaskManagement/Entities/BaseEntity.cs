@@ -10,6 +10,7 @@ namespace TaskManagement.Entities
         public BaseEntity()
         {
             this.CreatedDate = DateTime.Now;
+            this.IsActive = true;
         }
 
         public int Id { get; set; }

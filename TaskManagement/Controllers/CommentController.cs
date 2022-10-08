@@ -52,7 +52,7 @@ namespace TaskManagement.Controllers
 
         [HttpPost]
         [Route("edit")]
-        public ApiResponse EditComment(CommentModel commentModel)
+        public ApiResponse EditComment(EditCommentModel commentModel)
         {
             try
             {

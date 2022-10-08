@@ -23,6 +23,12 @@ namespace TaskManagement.Helpers
 
             CreateMap<CommentModel, CommentEntity>();
             CreateMap<CommentEntity, CommentModel>();
+
+            CreateMap<TaskRequestModel, TaskEntity>();
+            CreateMap<TaskEntity, TaskRequestModel>();
+
+            CreateMap<TaskResponseModel, TaskEntity>();
+            CreateMap<TaskEntity, TaskResponseModel>();
         }
     }
 }
