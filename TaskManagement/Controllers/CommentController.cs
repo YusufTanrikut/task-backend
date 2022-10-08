@@ -66,9 +66,16 @@ namespace TaskManagement.Controllers
 
         [HttpGet]
         [Route("searchComment/{prefix}")]
-        public string SearchComment(string prefix)
+        public ApiResponse SearchComment(string prefix)
         {
-            return "";
+            try
+            {
+                return _commentService.Search(prefix);
+            }
+            catch (Exception ex)
+            {
+                return new ApiResponse((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
         }
     }
 }

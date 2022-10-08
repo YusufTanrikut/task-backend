@@ -48,5 +48,11 @@ namespace TaskManagement.Services
 
             return new ApiResponse(comment);
         }
+
+        public ApiResponse Search(string prefix)
+        {
+            var comments = _mapper.Map<CommentModel>(_commentDal.Search(prefix));
+            return new ApiResponse(comments);
+        }
     }
 }

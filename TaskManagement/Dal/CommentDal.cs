@@ -16,7 +16,7 @@ namespace CommentManagement.Dal
             _context = context;
         }
 
-        public List<CommentEntity> GetComments(int? taskId)
+        public List<CommentEntity> GetComments(int taskId=0)
         {
             return taskId == 0 ? _context.Comments.Where(x=>x.TaskId == taskId).ToList()
                                : _context.Comments.ToList();
@@ -37,6 +37,11 @@ namespace CommentManagement.Dal
         public void Save()
         {
             _context.SaveChangesAsync();
+        }
+
+        public List<CommentEntity> Search(string prefix)
+        {
+            return _context.Comments.Where(x => x.Content.Contains(prefix)).ToList();
         }
     }
 }
