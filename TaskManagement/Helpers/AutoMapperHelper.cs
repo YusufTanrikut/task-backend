@@ -17,6 +17,9 @@ namespace TaskManagement.Helpers
 
             CreateMap<TaskEntity, TaskModel>();
             CreateMap<TaskModel, TaskEntity>();
+
+            CreateMap<UserTaskEntity, AssignModel>();
+            CreateMap<AssignModel, UserTaskEntity>();
         }
     }
 }

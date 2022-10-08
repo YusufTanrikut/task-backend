@@ -12,7 +12,7 @@ namespace TaskManagement.Dal
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<TaskEntity> Tasks { get; set; }
         public DbSet<CommentEntity> Comments { get; set; }
-
+        public DbSet<UserTaskEntity> UserTasks { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {

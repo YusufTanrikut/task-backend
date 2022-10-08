@@ -52,11 +52,11 @@ namespace TaskManagement.Controllers
 
         [HttpPost]
         [Route("editComment")]
-        public async Task<ApiResponse> EditComment(CommentModel commentModel)
+        public ApiResponse EditComment(CommentModel commentModel)
         {
             try
             {
-                return await _commentService.Create(commentModel);
+                return  _commentService.Edit(commentModel);
             }
             catch (Exception ex)
             {

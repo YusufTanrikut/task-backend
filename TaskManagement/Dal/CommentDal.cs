@@ -16,9 +16,10 @@ namespace CommentManagement.Dal
             _context = context;
         }
 
-        public List<CommentEntity> GetComments()
+        public List<CommentEntity> GetComments(int? taskId)
         {
-            return _context.Comments.ToList();
+            return taskId == 0 ? _context.Comments.Where(x=>x.TaskId == taskId).ToList()
+                               : _context.Comments.ToList();
         }
 
         public async Task<bool> Create(CommentEntity Comment)
@@ -31,6 +32,11 @@ namespace CommentManagement.Dal
         public CommentEntity GetCommentById(int id)
         {
             return _context.Comments.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void Save()
+        {
+            _context.SaveChangesAsync();
         }
     }
 }

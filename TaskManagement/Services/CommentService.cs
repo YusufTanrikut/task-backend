@@ -38,5 +38,15 @@ namespace TaskManagement.Services
         {
             return new ApiResponse(await _commentDal.Create(_mapper.Map<CommentEntity>(commentModel)));
         }
+
+        public ApiResponse Edit(CommentModel commentModel)
+        {
+            var comment = _commentDal.GetCommentById(commentModel.Id);
+            comment.Content = commentModel.Content;
+
+            _commentDal.Save();
+
+            return new ApiResponse(comment);
+        }
     }
 }

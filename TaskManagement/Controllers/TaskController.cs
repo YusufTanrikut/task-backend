@@ -64,10 +64,32 @@ namespace TaskManagement.Controllers
             }
         }
 
-        //[Route("Edit")]
-        //public string Edit()
-        //{
-        //    return "";
-        //}
+        [HttpPost]
+        [Route("AssignTask")]
+        public async Task<ApiResponse> AssignTask(AssignModel assignModel)
+        {
+            try
+            {
+                return await _taskService.AssignTask(assignModel);
+            }
+            catch (Exception ex)
+            {
+                return new ApiResponse((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPost]
+        [Route("edit")]
+        public ApiResponse Edit(TaskModel model)
+        {
+            try
+            {
+                return _taskService.Edit(model);
+            }
+            catch (Exception ex)    
+            {
+                return new ApiResponse((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
     }
 }

@@ -31,5 +31,17 @@ namespace TaskManagement.Dal
         {
             return _context.Tasks.FirstOrDefault(x=>x.Id == id);
         }
+
+        public async Task<bool> AssignTask(UserTaskEntity userTaskEntity)
+        {
+            var res = await _context.UserTasks.AddAsync(userTaskEntity);
+            await _context.SaveChangesAsync();
+            return res.Entity.Id > 0;
+        }
+
+        public void Save()
+        {
+           _context.SaveChangesAsync();
+        }
     }
 }
