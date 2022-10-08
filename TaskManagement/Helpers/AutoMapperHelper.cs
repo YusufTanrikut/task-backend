@@ -20,6 +20,9 @@ namespace TaskManagement.Helpers
 
             CreateMap<UserTaskEntity, AssignModel>();
             CreateMap<AssignModel, UserTaskEntity>();
+
+            CreateMap<CommentModel, CommentEntity>();
+            CreateMap<CommentEntity, CommentModel>();
         }
     }
 }

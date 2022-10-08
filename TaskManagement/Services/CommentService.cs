@@ -51,7 +51,7 @@ namespace TaskManagement.Services
 
         public ApiResponse Search(string prefix)
         {
-            var comments = _mapper.Map<CommentModel>(_commentDal.Search(prefix));
+            var comments = _mapper.Map<List<CommentModel>>(_commentDal.Search(prefix));
             return new ApiResponse(comments);
         }
     }
